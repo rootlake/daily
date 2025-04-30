@@ -1,0 +1,153 @@
+:root {
+  --background-color: #000000;
+  --card-background: #1c1c1e;
+  --text-color: #ffffff;
+  --secondary-text: rgba(255, 255, 255, 0.6);
+  --success-color: #34d399;
+  --success-bg: rgba(52, 211, 153, 0.1);
+  --border-radius: 16px;
+  --spacing: 16px;
+  --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+header {
+  text-align: left;
+  margin-bottom: 32px;
+  padding: var(--spacing) var(--spacing) 0;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.streak {
+  font-size: 17px;
+  color: var(--secondary-text);
+  font-weight: 400;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 var(--spacing);
+}
+
+.checklist-section {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.checklist-section:active {
+  transform: scale(0.98);
+}
+
+.checklist-section.checked {
+  background-color: var(--success-bg);
+  border-color: var(--success-color);
+}
+
+.checklist-section.checked .checklist-item label {
+  color: var(--success-color);
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.checklist-item input[type="checkbox"] {
+  display: none;
+}
+
+.checklist-item label {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: -0.2px;
+  transition: color 0.3s ease;
+}
+
+.checklist-time {
+  font-size: 15px;
+  color: var(--secondary-text);
+  font-weight: 400;
+}
+
+.checklist-section.checked .checklist-time {
+  color: var(--success-color);
+  opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 12px;
+  }
+  
+  header {
+    padding: 12px 12px 0;
+  }
+  
+  .checklist {
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+  
+  .checklist-item label {
+    font-size: 17px;
+  }
+  
+  .checklist-section {
+    min-height: 64px;
+  }
+} 

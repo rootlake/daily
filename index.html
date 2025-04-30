@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Daily Checklist</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/src/style.css">
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1 id="current-date"></h1>
+        <div id="streak" class="streak"></div>
+      </header>
+      <main>
+        <div class="checklist">
+          <div class="checklist-section" data-time="wake">
+            <div class="checklist-item">
+              <input type="checkbox" id="wake-check">
+              <label for="wake-check">
+                Wake - Pantoprazole
+                <span class="checklist-time"></span>
+              </label>
+            </div>
+          </div>
+          <div class="checklist-section" data-time="morning">
+            <div class="checklist-item">
+              <input type="checkbox" id="morning-check">
+              <label for="morning-check">
+                Morning - Check Glucose
+                <span class="checklist-time"></span>
+              </label>
+            </div>
+          </div>
+          <div class="checklist-section" data-time="breakfast">
+            <div class="checklist-item">
+              <input type="checkbox" id="breakfast-check">
+              <label for="breakfast-check">
+                Breakfast - Metformin
+                <span class="checklist-time"></span>
+              </label>
+            </div>
+          </div>
+          <div class="checklist-section" data-time="afternoon">
+            <div class="checklist-item">
+              <input type="checkbox" id="afternoon-check">
+              <label for="afternoon-check">
+                Afternoon - Check Glucose
+                <span class="checklist-time"></span>
+              </label>
+            </div>
+          </div>
+          <div class="checklist-section" data-time="dinner">
+            <div class="checklist-item">
+              <input type="checkbox" id="dinner-check">
+              <label for="dinner-check">
+                Dinner - Metformin
+                <span class="checklist-time"></span>
+              </label>
+            </div>
+          </div>
+          <div class="checklist-section" data-time="evening">
+            <div class="checklist-item">
+              <input type="checkbox" id="evening-check">
+              <label for="evening-check">
+                Evening - Check Glucose
+                <span class="checklist-time"></span>
+              </label>
+            </div>
+          </div>
+          <div class="checklist-section" data-time="night">
+            <div class="checklist-item">
+              <input type="checkbox" id="night-check">
+              <label for="night-check">
+                Night - Lipitor and Bisoprolol
+                <span class="checklist-time"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
